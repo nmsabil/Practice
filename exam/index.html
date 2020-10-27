@@ -6,15 +6,49 @@
     <title>q1</title>
   </head>
   <body>
-    <input type="text" id="myCountry" />
+    <select name="cars" id="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
 
     <script>
-      const countries = [
-        { code: "AR", name: "Argentina", capital: "Buenos Aires" },
-        { code: "AT", name: "Austria", capital: "Vienna" },
-        { code: "BE", name: "Belgium", capital: "Brussels" },
-        { code: "CA", name: "Canada", capital: "Ottawa" },
-      ];
+      // const continent = [
+      //   { name: "Europe",
+      //     countries: [
+      //         {name: "France", capital: "Paris" },
+      //         {name: "Italy", capital: "Rome" },
+      //         {name: "Spain", capital: "Madrid" }
+      //   }
+      //   { name: "North America",
+      //     countries: [
+      //         {name: "Canada", capital: "Ottawa" },
+      //         {name: "United States", capital: "Washington" }
+      //   }
+      //  ]
+
+      fetch("country-api.php")
+        .then((response) => response.json())
+        .then((data) =>
+          forEach((el) => {
+            const option = document.createElement("OPTION");
+            const option2 = document.createElement("OPTION");
+            const secondSelect = document.querySelector("select")[1];
+
+            const firstSelect = document
+              .querySelector("select")
+              .addEventListener("change", (e) => {
+                for (let i = 0; i < el.name.countries.length; i++) {
+                  option2 = textContent = el.name.countries[i];
+                }
+                secondSelect.innerHTML = option2.textContent = option2;
+              });
+
+            option.textContent = el.name;
+            firstSelect.innerHTML = option;
+          })
+        );
 
       // document.querySelector("input").addEventListener("input", (e) => {
       //   for (let i = 0; i < countries.length; i++) {
