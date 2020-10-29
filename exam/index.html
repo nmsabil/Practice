@@ -14,19 +14,19 @@
     </select>
 
     <script>
-      // const continent = [
-      //   { name: "Europe",
-      //     countries: [
-      //         {name: "France", capital: "Paris" },
-      //         {name: "Italy", capital: "Rome" },
-      //         {name: "Spain", capital: "Madrid" }
-      //   }
-      //   { name: "North America",
-      //     countries: [
-      //         {name: "Canada", capital: "Ottawa" },
-      //         {name: "United States", capital: "Washington" }
-      //   }
-      //  ]
+      const continent = [
+        { name: "Europe",
+          countries: [
+              {name: "France", capital: "Paris" },
+              {name: "Italy", capital: "Rome" },
+              {name: "Spain", capital: "Madrid" }
+        }
+        { name: "North America",
+          countries: [
+              {name: "Canada", capital: "Ottawa" },
+              {name: "United States", capital: "Washington" }
+        }
+       ]
 
       fetch("country-api.php")
         .then((response) => response.json())
@@ -42,7 +42,7 @@
                 for (let i = 0; i < el.name.countries.length; i++) {
                   option2 = textContent = el.name.countries[i];
                 }
-                secondSelect.innerHTML = option2.textContent = option2;
+                secondSelect.innerHTML = option2;
               });
 
             option.textContent = el.name;
@@ -50,42 +50,42 @@
           })
         );
 
-      // document.querySelector("input").addEventListener("input", (e) => {
-      //   for (let i = 0; i < countries.length; i++) {
-      //     if (e.target.value === countries[i].name) {
-      //       console.log(countries[i].capital);
-      //     } else {
-      //       console.log("Capital not found");
-      //     }
-      //   }
-      // });
+      document.querySelector("input").addEventListener("input", (e) => {
+        for (let i = 0; i < countries.length; i++) {
+          if (e.target.value === countries[i].name) {
+            console.log(countries[i].capital);
+          } else {
+            console.log("Capital not found");
+          }
+        }
+      });
 
-      // document.getElementById("tester").addEventListener("click", (e) => {
-      //   if (e.target.tagName === "P") {
-      //     const span = document.querySelector("span");
-      //     span.textContent = e.target.textContent;
-      //   }
-      // });
-      // function v1(url, label) {
-      //   return `<a href="${url}">${label}</a>`;
-      // }
+      document.getElementById("tester").addEventListener("click", (e) => {
+        if (e.target.tagName === "P") {
+          const span = document.querySelector("span");
+          span.textContent = e.target.textContent;
+        }
+      });
+      function v1(url, label) {
+        return `<a href="${url}">${label}</a>`;
+      }
 
-      // const v2 = (url, label) => {
-      //   return `<a href="${url}">${label}</a>`;
-      // };
+      const v2 = (url, label) => {
+        return `<a href="${url}">${label}</a>`;
+      };
 
-      // class
+      class
 
-      // function Car(manufacturer, year) {
-      //   Car.prototype.format = function () {
-      //     console.log(`${manufacturer} ${year}`);
-      //   };
-      // }
+      function Car(manufacturer, year) {
+        Car.prototype.format = function () {
+          console.log(`${manufacturer} ${year}`);
+        };
+      }
 
-      // const car = new Car("BMW", 2020);
-      // car.format();
+      const car = new Car("BMW", 2020);
+      car.format();
 
-      // dec("hh", "hey");
+      dec("hh", "hey");
     </script>
   </body>
 </html>
